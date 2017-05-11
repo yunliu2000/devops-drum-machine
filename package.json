@@ -4,7 +4,7 @@
   "description": "Angular Drum Machine",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/karma/bin/karma start karma.conf.js",
     "build": "cd public/assets/ && bower install",
     "start": "grunt --force"
   },
@@ -31,6 +31,7 @@
     "karma-phantomjs-launcher": "~0.2",
     "karma-spec-reporter": "latest",
     "jasmine-core": "latest",
+    "phantomjs": "^2.1.7",
     "phantomjs-prebuilt": "latest",
     "requirejs": "latest"
   },

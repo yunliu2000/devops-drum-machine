@@ -14,11 +14,11 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      '../public/assets/bower_components/angular/angular.min.js',
-      '../public/assets/bower_components/angular-mocks/angular-mocks.js',
-      '../public/assets/bower_components/howler/howler.min.js',
-      '../public/app/**/*.js',
-      './unit/**/*.spec.js'
+      'public/assets/bower_components/angular/angular.min.js',
+      'public/assets/bower_components/angular-mocks/angular-mocks.js',
+      'public/assets/bower_components/howler/howler.min.js',
+      'public/app/**/*.js',
+      'test/unit/app/**/*.spec.js'
     ],
 
 
@@ -47,7 +47,7 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch: false,
 
 
     // Start these browsers, currently available:
@@ -62,11 +62,11 @@ module.exports = function(config) {
 
 
     // If browser does not capture in given timeout [ms], kill it
-    captureTimeout: 60000,
+    captureTimeout: 5000,
 
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false
+    singleRun: true
   });
 };
