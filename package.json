@@ -4,7 +4,8 @@
   "description": "Angular Drum Machine",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "grunt --force"
   },
   "repository": {
     "type": "git",
@@ -13,6 +14,7 @@
   "devDependencies": {
     "bower": "latest",
     "grunt": "latest",
+    "grunt-cli": "1.2.0",
     "grunt-contrib-sass": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-contrib-connect": "latest",
