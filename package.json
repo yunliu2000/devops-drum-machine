@@ -4,7 +4,7 @@
   "description": "Angular Drum Machine",
   "main": "index.html",
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start karma.conf.js",
+    "test": "karma start karma.conf.js",
     "build": "cd public/assets/ && bower install",
     "start": "grunt --force"
   },
