@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 
     karma: {
       unit: {
-        configFile: 'test/karma.conf.js',
+        configFile: 'karma.conf.js',
         autoWatch: false,
         background: true
       }
@@ -86,6 +86,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
 
   // Default task.
-  grunt.registerTask('default', ['sass', 'uglify', 'connect', 'watch']);
-  grunt.registerTask('test', ['sass', 'uglify', 'karma:unit:start', 'connect', 'watch']);
+  grunt.registerTask('build', ['sass', 'uglify']);
+  grunt.registerTask('dev', ['build', 'karma:unit:start', 'connect', 'watch']);
 };
