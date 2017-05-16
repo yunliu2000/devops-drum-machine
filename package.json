@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "karma start karma.conf.js",
-    "build": "grunt build && cd public/assets/ && bower install",
+    "build": "cd public/assets/ && bower install && cd ../.. && grunt build",
     "start": "grunt dev"
   },
   "repository": {
