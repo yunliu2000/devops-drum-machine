@@ -30,7 +30,12 @@ module.exports = function(config) {
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['spec'],
+    reporters: ['spec', 'junit'],
+
+    junitReporter: {
+      outputDir: 'tests-results', // results will be saved as $outputDir/$browserName.xml
+      useBrowserName: true // add browser name to report and classes names
+    },
 
     // web server port
     port: 8080,

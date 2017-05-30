@@ -27,6 +27,7 @@
     "karma-firefox-launcher": "latest",
     "karma-html2js-preprocessor": "latest",
     "karma-jasmine": "latest",
+    "karma-junit-reporter": "^1.2.0",
     "karma-phantomjs-launcher": "~0.2",
     "karma-requirejs": "latest",
     "karma-script-launcher": "latest",
