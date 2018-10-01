@@ -34,7 +34,8 @@
     "karma-spec-reporter": "latest",
     "phantomjs": "^2.1.7",
     "phantomjs-prebuilt": "latest",
-    "requirejs": "latest"
+    "requirejs": "latest",
+    "sass": "^1.14.1"
   },
   "author": "Doug Johnston",
   "license": "BSD-2-Clause",
