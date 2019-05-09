@@ -4,7 +4,16 @@ pipeline{
         nodejs 'NodeJS11' 
     }
     stages{
-        stage("A"){
+        stage("Build"){
+            steps{
+                sh label: 'Npm install and build', script: 'npm install && npm run-script build'
+                sh label: 'Run tests', script: 'npm test'
+            }
+            post{
+                
+            }
+        }
+        stage("Deploy"){
             steps{
                 echo "========executing A========"
             }
