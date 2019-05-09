@@ -10,7 +10,15 @@ pipeline{
                 sh label: 'Run tests', script: 'npm test'
             }
             post{
-                
+                always{
+                    echo "========always========"
+                }
+                success{
+                    echo "========Build executed successfully========"
+                }
+                failure{
+                    echo "========Build execution failed========"
+                }
             }
         }
         stage("Deploy"){
