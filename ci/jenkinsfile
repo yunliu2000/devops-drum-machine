@@ -9,6 +9,7 @@ pipeline{
                 chuckNorris()
                 sh label: 'Npm install and build', script: 'npm install && npm run-script build'
                 sh label: 'Run tests', script: 'npm test'
+                stash includes: 'public/**/*', name: 'build'
             }
             post{
                 always{
