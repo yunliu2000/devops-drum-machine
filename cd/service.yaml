@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2019-05-17T12:19:32Z
+  labels:
+    app: drum-machine
+  name: drum-machine-deployment
+  namespace: default
+  resourceVersion: "13915"
+  selfLink: /api/v1/namespaces/default/services/drum-machine-deployment
+  uid: 06ceef3c-789e-11e9-a189-0800278bdbcf
+spec:
+  clusterIP: 10.111.201.55
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 31813
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: drum-machine
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
