@@ -4,9 +4,9 @@ pipeline{
         stage("Build"){
             steps{
                 echo 'Building'
-                sh label: 'run docker build' script: 'docker build -t devops-drum-machine:${BUILD_NUMBER} .'
-                sh label: 'run test container' script: 'docker run --name testdrummachine-${BUILD_NUMBER} devops-drum-machine:${BUILD_NUMBER}'
-                sh label: 'copy tests-results' script: 'docker cp testdrummachine-${BUILD_NUMBER}:/tests-results . && docker stop testdrummachine-${BUILD_NUMBER} && docker rm testdrummachine-${BUILD_NUMBER}'
+                sh 'docker build -t devops-drum-machine:${BUILD_NUMBER} .'
+                sh 'docker run --name testdrummachine-${BUILD_NUMBER} devops-drum-machine:${BUILD_NUMBER}'
+                sh 'docker cp testdrummachine-${BUILD_NUMBER}:/tests-results . && docker stop testdrummachine-${BUILD_NUMBER} && docker rm testdrummachine-${BUILD_NUMBER}'
                 junit '**/TEST-PhantomJS*'
             }               
         }
