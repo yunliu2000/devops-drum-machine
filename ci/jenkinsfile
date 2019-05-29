@@ -4,8 +4,9 @@ pipeline{
         stage("Build"){
             steps{
                 echo 'Building'
+                sh 'whoami'
                 sh 'docker build -t devops-drum-machine:${BUILD_NUMBER} .'
-                sh 'docker run --name testdrummachine-${BUILD_NUMBER} devops-drum-machine:${BUILD_NUMBER}'
+                sh 'docker run -d --name testdrummachine-${BUILD_NUMBER} devops-drum-machine:${BUILD_NUMBER}'
                 sh 'docker cp testdrummachine-${BUILD_NUMBER}:/tests-results . && docker stop testdrummachine-${BUILD_NUMBER} && docker rm testdrummachine-${BUILD_NUMBER}'
                 junit '**/TEST-PhantomJS*'
             }               
