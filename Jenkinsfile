@@ -1,24 +1,27 @@
 pipeline {
   agent any
+  tools {
+	nodejs 'NodeJS 12.4.0'
+  }
   stages {
     stage('Compile') {
       agent any
       steps {
-        sh 'sudo npm install'
-        sh 'sudo npm run build'
+        sh 'npm install'
+        sh 'npm run build'
       }
     }
     stage('Unit Testing') {
       agent any
       steps {
-        sh 'sudo npm test'
+        sh 'npm test'
       }
     }
     stage('Deploy') {
       parallel {
         stage('Deploy') {
           steps {
-            sh 'sudo npm start &'
+            sh 'npm start &'
           }
         }
         stage('Archive Artifacts') {
@@ -31,7 +34,7 @@ pipeline {
     stage('Integration testing') {
       steps {
         sleep 10
-        sh 'sudo curl localhost'
+        sh 'echo some integration tests'
       }
     }
   }
